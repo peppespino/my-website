@@ -31,4 +31,5 @@ st.text_input(label='scrivi una frase',placeholder='scrivi qui..',
               on_change=add_todo,key='new_todo')
 
 print('hello')
-st.session_state
+
+
