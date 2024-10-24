@@ -16,7 +16,7 @@ def add_todo():
 st.title('My Todo App')
 st.subheader('hei amici questa è la mia di app')
 st.write('''questa app ti consente di ricordati tutto!!!!!
-        (anche le chiavi del CBR) ''')
+         ''')
 
 
 for index,todo in enumerate (todos):
