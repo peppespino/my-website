@@ -1,7 +1,7 @@
 import streamlit as st
 st.set_page_config(layout="wide")
 
-col1, col2 = st.columns(2)
+col1, col2= st.columns(2)
 with col1:
     st.image('images/photo.png',width=550)
 with col2:
@@ -14,4 +14,9 @@ with col2:
       una sorta di repository per esplorare le app che ho sviluppato lungo il mio percorso di apprendimento e crescita.
     
     """
-    st.info(contest)
+
+    st.markdown(f"<p style='font-size:20px; font-family:courier;background-color:#F0F8FF;padding:5px;'>{contest}", unsafe_allow_html=True)
+
+
+descrizione=("Qui sotto puoi trovare le app che ho creato in Python. Sentiti libero di contattarmi!")
+st.markdown(f"<p style='font-size:17px;font-family:courier;'>{descrizione}", unsafe_allow_html=True)
