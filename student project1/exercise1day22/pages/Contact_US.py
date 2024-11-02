@@ -1,30 +1,29 @@
 import pandas
 import streamlit as st
+import pandas as pd
 from send_email import send_email
-import pandas
+
 
 st.header('Contact Me')
 
 with st.form(key='email_forms'):
-
     user_email = st.text_input('Il tuo indirizzo Mail',placeholder='utente@esempio.com')
 
-    topics = pandas.read_csv('topics.csv')
+    topics=pandas.read_csv('topics.csv',)
 
-    opzioni = st.selectbox('Di cosa vuoi parlarmi?',topics['topic'])
-    st.write(f"Hai selezionato: {opzioni}")
+    opzione_selezionata = st.selectbox("Di cosa vuoi parlarmi:", topics['topic'])
+
+
+    st.write(f"Hai selezionato: {opzione_selezionata}")
 
     message = st.text_area('IL tuo messaggio',placeholder='Ciao Giuseppe...')
-
+    #message = message + '\n' + user_email
     message=f"""\
 Subject: New email from {user_email}
 
-inviata da: {user_email}
-
-Topic: {opzioni}
-
+topic: {opzione_selezionata}
 {message}
-
+inviata da: {user_email}
 
 """
     button = st.form_submit_button('Submit')
